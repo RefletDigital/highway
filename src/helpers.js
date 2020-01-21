@@ -136,9 +136,9 @@ export default class Helpers {
     if (slug in this.renderers) {
       const renderer = this.renderers[slug];
 
-      /*if (typeof renderer === 'function' && !Renderer.isPrototypeOf(renderer)) {
+      /* if (typeof renderer === 'function' && !Renderer.isPrototypeOf(renderer)) {
         return Promise.resolve(renderer()).then(({ default: cons }) => cons);
-      }*/
+      } */
 
       if (typeof renderer.then === 'function') {
         return Promise.resolve(renderer).then(({ default: cons }) => cons);
